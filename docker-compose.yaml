@@ -13,6 +13,14 @@ services:
     ports:
       - '3000:3000'
     working_dir: '/code/lorem-ipsum'
+    command: ["npm", "run", "server"]
+    volumes:
+      - ./:/code/lorem-ipsum
+  start:
+    image: 'node:16'
+    ports:
+      - '3000:3000'
+    working_dir: '/code/lorem-ipsum'
     command: ["npm", "start"]
     volumes:
       - ./:/code/lorem-ipsum
