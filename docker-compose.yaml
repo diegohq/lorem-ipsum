@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  npm:
+    image: 'node:16'
+    ports:
+      - '3000:3000'
+    working_dir: '/code/lorem-ipsum'
+    entrypoint: ['npm']
+    volumes:
+      - ./:/code/lorem-ipsum
+  server:
+    image: 'node:16'
+    ports:
+      - '3000:3000'
+    working_dir: '/code/lorem-ipsum'
+    command: ["npm", "start"]
+    volumes:
+      - ./:/code/lorem-ipsum
